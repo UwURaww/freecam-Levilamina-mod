@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+project(freecam_native)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# make sure the toolchain from the Android NDK is used by the GitHub Actions workflow
+add_library(freecam SHARED src/freecam.cpp)
+
+# include directories
+target_include_directories(freecam PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# linker flags (may need adjusting depending on LeviLamina headers/libraries)
+# If LeviLamina provides a prebuilt lib, link it here (example commented):
+# target_link_libraries(freecam PRIVATE levilamina)
+
+# set the output name to libfreecam.so
+set_target_properties(freecam PROPERTIES OUTPUT_NAME "freecam")
