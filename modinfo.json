@@ -1,0 +1,8 @@
+{
+  "name": "Freecam",
+  "id": "freecam",
+  "version": "0.1.0",
+  "author": "You",
+  "description": "Minimal Freecam mod for LeviLamina / LeviLauncher — mobile friendly (volume up toggle).",
+  "entry": "libfreecam.so"
+}
